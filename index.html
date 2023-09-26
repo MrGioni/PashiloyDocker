@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js" lang="ru" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="css/foundation.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioni's Try</title>
+  </head>
+  
+  <style>
+    .mid_side{
+      max-width: 80.7%;
+      margin: 0 auto;
+    }
+    .container {
+      background-image: url(./img/clouds.png);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 110%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+    .img { 
+    max-width: 100%; 
+    width: 741px;
+    }
+    .sticky{
+      position: sticky;
+      top: 10%;
+      border-radius: 10px;
+      padding: 5px 15px;
+    }
+    .text_side_menu {
+      color: black;
+    }
+    .smoth_box{
+      width: auto;
+      height: auto;
+      background: rgb(255,199,150);
+      border-radius: 10px;
+      padding: 5px 5px;
+      transition: 0.35s;
+    }
+    .smoth_box:hover{
+      background: rgb(255,98,88);
+      padding: 15px 5px;
+    }
+    .header{
+      position: sticky;
+      top: 0;
+      width: auto;
+      height: auto;
+      background: rgb(255,199,150);
+      border-radius: 10px;
+      padding: 5px 5px;
+    }
+    .page{
+      background-image: repeating-linear-gradient(rgb(228,177,151), white);
+    }
+  </style>
+  
+  <body class="page">
+    <div class="header">
+      <a class="smoth_box" href="index.html", style="text-decoration: none; font-size:50px; color:black">
+        Главная
+      </a>
+    </div>
+
+    <div class="container">      
+      <div>
+        <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left: 0">
+          <li class="smoth_box"><a href="#first", class="text_side_menu">  Что такое Docker? </a></li>
+          <li class="smoth_box"><a href="#second", class="text_side_menu">  Контейнеры, что это и для чего? </a></li>
+          <li class="smoth_box"><a href="#third", class="text_side_menu">  Принцип работы Docker </a></li>
+          <li class="smoth_box"><a href="#fourth", class="text_side_menu">  Образы Docker </a></li>
+          <li class="smoth_box"><a href="#fifth", class="text_side_menu">  Dockerфайлы </a></li>
+          <li class="smoth_box"><a href="#sixth", class="text_side_menu">  Контейнеры Docker </a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="mid_side">
+          <h1 align="center">Docker (контейнеры) для web приложений</h1>
+          <section id="first" data-megellan-target="first">
+            <h2>Что такое Docker?</h2>
+            <p>Docker - это платформа контейнеризации, позволяющая упаковывать, распространять и запускать приложения в изолированных переносимых контейнерах.</p>
+          </section>
+          <section id="second" data-megellan-target="second">
+            <h2>Контейнеры, что это и для чего?</h2>
+            <p>Контейнеры - это код с его зависимостями и необходимми конфигурацями переносимый в самодостаточный блок. Они стабильно работают в разных средах с одинаковым поведением независимо от базовой инфраструктуры. Контейнеры легки, эффективны, легко разделяются и развертываются, что делает их отличным выбором для проектов веб-разработки.</p>
+            <p>Контейнеры используют ядро хост-операционной системы, что снижает потребление ресурсов и обеспечивает более быстрое время запуска</p>
+          </section>
+          <section id="third" data-megellan-target="third">
+            <h2>Принцип работы Docker</h2>
+            <p>Docker предоставляет простой и удобный способ контейнеризации, управления и распространения контейнеров. Контейнеризация в Docker реализуется с помощью различных компонентов и концепций, включая образы Docker, файлы Dockerfiles и контейнеры Docker.</p>
+          </section>
+          <section id="fourth" data-megellan-target="fourth">
+            <p>Образ Docker - это переносимый, легкий и исполняемый пакет, содержащий все необходимое для запуска приложения: код, время выполнения, системные инструменты, библиотеки и настройки. Образы создаются на основе базовых образов - предварительно сконфигурированных сред ОС, которые служат основой для контейнерного приложения. Образы Docker версионируются и могут храниться в реестре, что упрощает совместное использование и распространение приложения среди членов команды или его развертывание в различных средах.</p>
+          </section>
+          <section id="fifth" data-megellan-target="fifth">
+            <h3>Dockerфайлы</h3>
+            <p>Dockerfile - это сценарий, содержащий пошаговые инструкции по сборке образа Docker. В нем указываются базовый образ, зависимости, код приложения, системные конфигурации и другие требования для запуска приложения в контейнере. Dockerфайлы позволяют разработчикам определять среду приложения в коде, что способствует прозрачности и версионности.</p>
+          </section>
+          <section id="sixth" data-megellan-target="sixth">
+            <h3>Контейнеры Docker</h3>
+            <p>Контейнер Docker - это запущенный экземпляр образа Docker. При запуске контейнер оборачивает приложение и его зависимости в изолированную и согласованную среду, обеспечивая его ожидаемое поведение в различных системах. Контейнеры можно создавать, запускать, останавливать и удалять по мере необходимости, что повышает переносимость приложений и упрощает тестирование и развертывание новых версий программного обеспечения.</p>
+          </section>
+          <img src="./img/docker.jpg" class="img">
+        </div>
+      </div>
+
+      <div class="right_side">
+        <div class="sticky", style="background: rgb(255,199,150)">
+          <h4>Может вас заинтересует</h4>
+          <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+            <li class="smoth_box"><a href="mobydocker.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Moby Docker </a></li>
+          </ul>
+          <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+            <li class="smoth_box"><a href="soundwords.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Тексты песенок </a></li>
+          </ul>
+          <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+            <li class="smoth_box"><a href="humor.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Анегдот (не очень) дня </a></li>
+          </ul>
+          <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+            <li class="smoth_box"><a href="mobydocker.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Moby Docker </a></li>
+          </ul>
+        </div>
+      </div>    
+    </div> 
+    <footer align="center", style="background: coral">
+      <div>
+        <h4>2023 Copyright: Gioni's Try</h4>
+      </div>
+    </footer>
+  </body>
+</html>

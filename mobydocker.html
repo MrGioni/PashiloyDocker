@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js" lang="ru" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="css/foundation.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioni's Try</title>
+  </head>
+  
+  <style>
+    .mid_side{
+      max-width: 80.7%;
+      margin: 0 auto;
+    }
+    .container {
+      background-image: url(./img/clouds.png);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 110%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+    .img { 
+    max-width: 100%; 
+    width: 741px;
+    }
+    .sticky{
+      position: sticky;
+      top: 10%;
+      border-radius: 10px;
+      padding: 5px 15px;
+    }
+    .text_side_menu {
+      color: black;
+    }
+    .smoth_box{
+      width: auto;
+      height: auto;
+      background: rgb(255,199,150);
+      border-radius: 10px;
+      padding: 5px 5px;
+      transition: 0.35s;
+    }
+    .smoth_box:hover{
+      background: rgb(255,98,88);
+      padding: 15px 5px;
+    }
+    .header{
+      position: sticky;
+      top: 0;
+      width: auto;
+      height: auto;
+      background: rgb(255,199,150);
+      border-radius: 10px;
+      padding: 5px 5px;
+    }
+    .page{
+      background-image: repeating-linear-gradient(rgb(228,177,151), white);
+    }
+  </style>
+  
+  <body class="page">
+    <div class="header">
+      <a class="smoth_box" href="index.html", style="text-decoration: none; font-size:50px; color:black">
+        Главная
+      </a>
+    </div>
+
+    <div class="container">      
+      <div>
+        <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left: 0">
+            <li class="smoth_box"><a href="#moby_one", class="text_side_menu">  Что такое Moby?</a></li>
+            <li class="smoth_box"><a href="#moby_two", class="text_side_menu">  Докер перед Моби </a></li>
+            <li class="smoth_box"><a href="#moby_three", class="text_side_menu">  Сборочная модель </a></li>
+            <li class="smoth_box"><a href="#moby_four", class="text_side_menu">  От Моби к Докеру </a></li>           
+        </ul>
+      </div>
+
+      <div>
+        <div class="mid_side">
+          <h1 align="center">Docker (контейнеры) для web приложений</h1>
+          <h2>Moby Docker</h2>
+          <section id="moby_one" data-megellan-target="mobt_one">
+            <h3>Что такое Moby и как он связан с Docker? – Облачные вычисления</h3>
+            <p>Проект Docker Moby разбирает основные компоненты Docker Engine в модульный набор инструментов, который могут повторно использовать другие системы на основе контейнеров. Moby был создан на основе тогда еще монолитной кодовой базы Docker в 2017 году. Он превратился в обширную библиотеку серверных компонентов контейнера, которые можно комбинировать для создания полных контейнерных решений, таких как сам Docker.</p>
+            <p>Как конечный пользователь Docker вы не взаимодействуете напрямую с проектом Moby. Он предназначен для людей, создающих платформы контейнеризации, а не для разработчиков, создающих и запускающих образы контейнеров. Однако вы можете столкнуться с Moby в документации Docker или при подаче отчетов об ошибках и запросов функций.</p>
+          </section>
+          <section id="moby_two" data-megellan-target="mobt_two">
+            <h3>Докер перед Моби</h3>
+            <p>Изначально Docker разрабатывался в кодовой базе, которая содержала все необходимое для проекта. Это варьировалось от среды выполнения контейнеров и сборщиков образов до поставщиков хранилищ, управления сетью и интерфейса командной строки.</p>
+            <p>Когда в середине прошлого десятилетия популярность Docker резко возросла, было замечено, что этот подход «все в одном» сдерживает более широкую экосистему. Дополнительные инструменты не могли полагаться на конкретные вещи Docker, потому что ничто не было компонентом. Внешним поставщикам пришлось использовать всю разросшуюся платформу Docker.</p>
+            <p>Базовые функциональные блоки, такие как containerd, были быстро разделены на автономные модули. Теперь сообщество может создавать новые системы контейнеров, не изобретая заново среду выполнения, которая взаимодействует с ядром для запуска экземпляров контейнеров. Затем последовали другие компоненты, такие как runc и HyperKit, которые были отделены от проекта Docker, а затем повторно интегрированы в выпуски Docker Engine в виде модульных зависимостей.</p>
+            <p>Moby поднял этот подход на новый уровень, извлекая из Docker еще больше компонентов. Старый docker/docker Репозиторий GitHub стал moby/moby; он содержит части кода Docker Engine с открытым исходным кодом в доступном для сообщества месте, независимо от репозиториев продуктов Docker CE и EE с закрытым исходным кодом.</p>
+          </section>
+          <section id="moby_three" data-megellan-target="mobt_three">
+            <h3>Сборочная модель</h3>
+            <p>С Moby каждый может смешивать и сочетать части технологии Docker без необходимости тянуть всю партию. Он предоставляет реализации всех ключевых подсистем, составляющих платформу контейнеризации. Вы можете создать свою собственную версию Docker, а затем заменить ее, чтобы использовать альтернативные проекты в определенных функциональных областях.</p>
+            <p>Подход Moby основан на использовании общих платформ в автомобильной промышленности. Marques строит целые семейства моделей из одного ряда шасси и двигателей. Добавление новой опции в модельный ряд достигается за счет использования общей платформы и ее настройки в соответствии с требованиями дизайна нового автомобиля. Платформа не обязательно будет использоваться как есть: модель, которая будет предлагаться в качестве выбора производительности, может иметь варианты двигателя и модификации шасси, которые недоступны на других моделях, использующих платформу.</p>
+            <p>Moby предлагает нечто подобное разработчикам контейнерных систем. Вы можете начать с предопределенных сборок компонентов, которые обеспечивают проверенную кросс-совместимость. Это основная общая автомобильная платформа. По мере развития вашей системы вы заменяете отдельные модули новыми реализациями, чтобы создать более мощный инструмент. Примером может быть замена генератора образов BuildKit на более мощную альтернативу. Автопроизводитель должен заменить стандартный небольшой двигатель своей платформы на альтернативу большей мощности.</p>
+            <p>Таким образом, опыт разработчика Moby заключается в сборке и расширении. Каждый проект на основе Moby будет использовать различный набор частей для достижения уникальной цели. До Moby у разработчиков не было доступной отправной точки для инноваций в определенных областях экосистемы контейнеров. Теперь разработки могут быть более целенаправленными, когда Моби заполняет пробелы.</p>
+          </section>
+          <section id="moby_four" data-megellan-target="mobt_four">
+            <h3>От Моби к Докеру</h3>
+            <p>Хотя Moby включает в себя все основы контейнерной системы, упор на разработчиков системы означает, что установка эталонной сборки не даст вам наилучших результатов. Именно здесь дополнительные проекты, такие как Docker, добавляют ценность. Они опираются на Moby, чтобы создать платформу, которая будет полезна для конечных пользователей, работающих с контейнерами и образами.</p>
+            <p>Например, установите Docker и запустите docker pull ubuntu:latest возможно без какой-либо ручной настройки. Это связано с тем, что Docker предварительно настроен на извлечение неквалифицированных ссылок на образы из Docker Hub. Это не будет работать с эталонной сборкой Moby; хотя он может извлекать изображения, у него нет регистра по умолчанию, поэтому он не сможет разрешить тег.</p>
+            <p>Нижестоящие платформы добавляют мнения к объективному набору функций, предлагаемых Moby. Хотя разработчикам контейнерных систем не нужен предварительно настроенный URL-адрес реестра, это полезная возможность для создателей образов. До появления Moby у разработчиков платформы не было возможности фильтровать решения Docker, основанные на продуктах.</p>
+          </section>
+        </div>
+      </div>
+
+        <div class="right_side">
+          <div class="sticky", style="background: rgb(255,199,150)">
+              <h4>Может вас заинтересует</h4>
+              <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+                <li class="smoth_box"><a href="mobydocker.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Moby Docker </a></li>
+              </ul>
+              <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+                <li class="smoth_box"><a href="soundwords.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Тексты песенок </a></li>
+              </ul>
+              <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+                <li class="smoth_box"><a href="humor.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Анегдот (не очень) дня </a></li>
+              </ul>
+              <ul class="sticky", style="list-style-type:none; padding-left:0; margin-left:0">
+                <li class="smoth_box"><a href="bustadname.html", class="text_side_menu", style="text-decoration: none; font-size:25px; color:black">  Топ 10 тупых женских имён </a></li>
+              </ul>
+          </div>
+        </div>
+    </div>
+    <div align="center"><iframe width="560" height="315" src="https://www.youtube.com/watch?v=7PMHy5ay_6c"></iframe></div>
+    <footer align="center", style="background: coral">
+        <div>
+          <h4>2023 Copyright: Gioni's Try</h4>
+        </div>
+    </footer> 
+  </body>
+</html>
